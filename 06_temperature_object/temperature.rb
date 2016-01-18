@@ -10,7 +10,7 @@ attr_accessor :temperature
     if temperature.has_key?(:f)
       return temperature[:f]
     else
-      return temperature * 9/5 + 32
+      return temperature[:c] * 9/5 + 32
     end
   end
 
@@ -18,7 +18,7 @@ attr_accessor :temperature
     if temperature.has_key?(:c)
       return temperature[:c]
     else
-      return (temperature - 32) * 5.0 / 9
+      return (temperature[:f] - 32) * 5.0 / 9
     end
   end
 
