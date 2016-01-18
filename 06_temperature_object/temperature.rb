@@ -31,3 +31,11 @@ attr_accessor :temperature
   end
 
 end
+
+class Celsius < Temperature
+
+end
+
+class Fahrenheit < Temperature
+
+end
