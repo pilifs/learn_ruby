@@ -6,6 +6,14 @@ attr_accessor :temperature
     @temperature = temperature
   end
 
+  def self.in_celsius(temperature)
+    new({c: temperature})
+  end
+
+  def self.in_fahrenheit(temperature)
+    new({f: temperature})
+  end
+
   def to_fahrenheit
     if temperature.has_key?(:f)
       return temperature[:f]
