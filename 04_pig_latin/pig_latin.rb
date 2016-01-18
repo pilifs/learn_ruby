@@ -25,11 +25,31 @@ def single_word_translate(word)
       break
     end
   }
+  # Check for a Q
+  if consonant_array.include?("q") then
+    # if Q
+    return special_case(consonant_array, letter_array)
+  else
+    # if no Q
+    return regular_case(consonant_array, letter_array)
+  end
+end
+
+def regular_case(consonant_array, letter_array)
   # remove the consonants based on size of consonant array that we made
   letter_array.shift(consonant_array.count)
   # return that shifted array, with consonants appended followed by "ay"
   return letter_array.join("") + consonant_array.join("") + "ay"
 end
 
-def multi_word_translate
+def special_case(consonant_array, letter_array)
+  # For first letter Q - it is assumed that Q will always be followed by u, no "special special" cases
+  if consonant_array[0] == "q" then
+    letter_array.shift(2)
+    return letter_array.join("") + "quay"
+  # For first letter NOT Q - shift by one more letter and add u before ay
+  else
+    letter_array.shift(consonant_array.count + 1)
+    return letter_array.join("") + consonant_array.join("") + "uay"
+  end
 end
