@@ -11,7 +11,8 @@ def sum(numbers = [])
   numbers.inject(:+)
 end
 
-def multiply
+def multiply(*num)
+  num.inject(:*)
 end
 
 def factorial(num)
