@@ -10,3 +10,9 @@ def sum(numbers = [])
   if numbers.empty? then return 0 end
   numbers.inject(:+)
 end
+
+def multiply
+end
+
+def factorial(num)
+end
