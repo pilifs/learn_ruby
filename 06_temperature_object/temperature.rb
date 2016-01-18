@@ -33,9 +33,13 @@ attr_accessor :temperature
 end
 
 class Celsius < Temperature
-
+  def initialize(temperature)
+    @temperature = {c: temperature}
+  end
 end
 
 class Fahrenheit < Temperature
-
+  def initialize(temperature)
+    @temperature = {f: temperature}
+  end
 end
