@@ -3,6 +3,6 @@ def hello
   return "hello"
 end
 
-def self.greet(name)
+def greet(name)
   return "Hello, #{name}!"
 end
