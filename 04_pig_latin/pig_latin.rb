@@ -3,7 +3,12 @@ def translate(word)
   if !word.include?(" ") then
     single_word_translate(word)
   else
-
+    # If multiple words then split them, run single word translate on each word, then rejoin sentence
+    multi_words = []
+    new_sentence = []
+    multi_words = word.split(" ")
+    multi_words.each {|word| new_sentence << single_word_translate(word)}
+    return new_sentence.join(" ")
   end
 end
 
