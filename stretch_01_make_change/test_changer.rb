@@ -4,6 +4,7 @@ require 'changer'
 class TestChanger < MiniTest::Test
 
   # make_change
+
   def test_change_one_quarter
     assert_equal [25], Changer.make_change(25)
   end
